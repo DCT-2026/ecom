@@ -1,0 +1,116 @@
+.footer-section{
+background:#111;
+color:white;
+padding:60px 0;
+font-size:14px;
+}
+
+.logo-area{
+display:flex;
+align-items:center;
+margin-bottom:15px;
+}
+
+.logo{
+width:40px;
+margin-right:10px;
+}
+
+.brand{
+font-size:20px;
+font-weight:600;
+}
+
+.join-text{
+color:#ff1e2d;
+margin-top:20px;
+}
+
+.subscribe-box{
+display:flex;
+border:1px solid #777;
+margin-top:15px;
+}
+
+.subscribe-box input{
+flex:1;
+background:transparent;
+border:none;
+color:white;
+padding:10px;
+}
+
+.subscribe-box button{
+background:transparent;
+border:none;
+color:white;
+padding:10px 15px;
+font-size:18px;
+}
+
+.subscribe-desc{
+color:#aaa;
+margin-top:10px;
+}
+
+.footer-section h5{
+margin-bottom:15px;
+}
+
+.footer-section ul{
+list-style:none;
+padding:0;
+}
+
+.footer-section ul li{
+margin-bottom:8px;
+color:#ccc;
+cursor:pointer;
+}
+
+.footer-section ul li:hover{
+color:#ff1e2d;
+}
+
+.red{
+color:#ff1e2d;
+}
+
+.social-icons i{
+font-size:20px;
+margin-right:10px;
+cursor:pointer;
+}
+
+.footer-bottom{
+color:#bbb;
+font-size:13px;
+margin-top:20px;
+}
+
+hr{
+border-color:#333;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.footer-section{
+text-align:center;
+}
+
+.logo-area{
+justify-content:center;
+}
+
+.subscribe-box{
+max-width:300px;
+margin:auto;
+}
+
+.social-icons{
+margin-bottom:15px;
+}
+
+}
