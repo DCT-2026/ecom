@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from "../product/product";
 import { Categories } from '../categories/categories';
 import { CommonModule } from '@angular/common';
 import { Header } from '../header/header';
@@ -16,6 +17,7 @@ import {MobileAccessories} from '../mobile-accessories/mobile-accessories'
     Categories,
     Header,
     Footer,
+    Product,
     HeroCarousel,CarAccessoriesComponent,MobileAccessories
   ],
   templateUrl: './home.html',
