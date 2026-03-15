@@ -1,0 +1,36 @@
+<section class="checkout-page">
+  <div class="checkout-shell">
+    <div class="checkout-copy">
+      <p class="eyebrow">Checkout</p>
+      <h1>Secure your Portronics order.</h1>
+      <p class="intro">
+        This screen is now wired and reachable from the cart drawer. You can extend it with address and payment
+        fields next.
+      </p>
+    </div>
+
+    <div class="checkout-layout">
+      <section class="details-card">
+        <h2>Order summary</h2>
+        <div class="summary-row">
+          <span>Items</span>
+          <strong>{{ cartCount }}</strong>
+        </div>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong>Rs. {{ subtotal }}</strong>
+        </div>
+        <p class="note">Taxes, shipping, and payment collection can be added here.</p>
+      </section>
+
+      <aside class="status-card">
+        <h2>Next step</h2>
+        <p *ngIf="cartCount; else emptyMessage">Connect this page to your real payment and address flow.</p>
+        <ng-template #emptyMessage>
+          <p>Your cart is empty. Add products before continuing to payment.</p>
+        </ng-template>
+        <a routerLink="/cart" class="secondary-link">Back to Cart</a>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,63 +1,265 @@
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-  <div class="container-fluid">
+<div class="promo-strip">
+  India's Favourite Power banks, starting from Rs. 749!
+</div>
 
-    <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="assets/logo.png" class="logo">
-      <span class="brand-text">PORTRONICS</span>
-    </a>
+<header class="site-header">
+  <div class="container-fluid header-shell">
+    <div class="header-main">
+      <a class="brand-wrap" href="#" aria-label="Portronics home">
+        <img class="brand-logo" src="assets/portronics.jpg" alt="Portronics" />
+      </a>
 
-    <!-- Mobile Toggle -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
+      <nav class="desktop-nav d-none d-lg-flex" aria-label="Primary">
+        <a
+          *ngFor="let item of navItems; let first = first"
+          class="nav-link-custom"
+          href="#"
+        >
+          <span>{{ item }}</span>
+          <i *ngIf="first" class="bi bi-chevron-down nav-caret"></i>
+        </a>
+      </nav>
+
+      <div class="header-actions d-none d-md-flex">
+        <button class="icon-button" type="button" aria-label="Search" (click)="openSearch()">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <button
+          class="icon-button"
+          type="button"
+          aria-label="Account"
+          [attr.aria-expanded]="isAccountModalOpen"
+          (click)="toggleAccountModal($event)"
+        >
+          <i class="bi bi-person"></i>
+        </button>
+
+        <button class="icon-button cart-button" type="button" aria-label="Cart" (click)="openCart()">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-badge">{{ cartCount }}</span>
+        </button>
+      </div>
+
+      <div class="mobile-actions d-flex d-md-none">
+        <button class="icon-button" type="button" aria-label="Search" (click)="openSearch()">
+          <i class="bi bi-search"></i>
+        </button>
+
+        <button class="icon-button cart-button" type="button" aria-label="Cart" (click)="openCart()">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-badge">{{ cartCount }}</span>
+        </button>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          [attr.aria-expanded]="isMobileMenuOpen"
+          aria-label="Toggle navigation"
+          (click)="toggleMobileMenu()"
+        >
+          <i class="bi" [ngClass]="isMobileMenuOpen ? 'bi-x-lg' : 'bi-list'"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu d-lg-none" [class.open]="isMobileMenuOpen">
+      <nav class="mobile-nav" aria-label="Mobile primary">
+        <a
+          *ngFor="let item of navItems; let first = first"
+          class="mobile-nav-link"
+          href="#"
+          (click)="closeMobileMenu()"
+        >
+          <span>{{ item }}</span>
+          <i *ngIf="first" class="bi bi-chevron-right"></i>
+        </a>
+      </nav>
+
+      <div class="mobile-account">
+        <a class="account-link" href="#" (click)="toggleAccountModal($event); closeMobileMenu()">
+          <i class="bi bi-person-circle"></i>
+          <span>Login / Account</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div
+  class="search-overlay"
+  [class.open]="isSearchOpen"
+  (click)="closeSearch()"
+  [attr.aria-hidden]="!isSearchOpen"
+>
+  <div class="search-dialog" (click)="$event.stopPropagation()">
+    <div class="search-popup-brand">
+      <img src="assets/portronics.jpg" alt="Portronics" />
+    </div>
+
+    <form class="search-popup-form" role="search">
+      <i class="bi bi-search"></i>
+      <input
+        type="search"
+        name="searchProducts"
+        placeholder="Search Products"
+        aria-label="Search Products"
+        [(ngModel)]="searchQuery"
+      />
+      <button class="search-close" type="button" aria-label="Close search" (click)="closeSearch()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+<div
+  class="account-overlay"
+  [class.open]="isAccountModalOpen"
+  (click)="closeAccountModal()"
+  [attr.aria-hidden]="!isAccountModalOpen"
+>
+  <div class="account-modal" (click)="$event.stopPropagation()">
+    <button class="account-modal-close" type="button" aria-label="Close account modal" (click)="closeAccountModal()">
+      <i class="bi bi-x-lg"></i>
     </button>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+    <div class="account-modal-left">
+      <div class="account-brand-row">
+        <img src="assets/portronics.jpg" alt="Portronics" />
+        <span class="powered-by">Powered by <strong>KwikPass</strong></span>
+      </div>
 
-      <ul class="navbar-nav">
+      <h2>Welcome to Portronics-India's most loved gadget Brand!</h2>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-            Categories
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item">Speakers</a></li>
-            <li><a class="dropdown-item">Headphones</a></li>
-            <li><a class="dropdown-item">Chargers</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link">New Arrivals</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link">Corporate Gifting</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link">Warranty Registration</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link">Support</a>
-        </li>
-
-      </ul>
-
+      <div class="account-feature-grid">
+        <article class="account-feature-card" *ngFor="let feature of accountFeatures">
+          <div class="feature-star">
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </article>
+      </div>
     </div>
 
-    <!-- Right Icons -->
-    <div class="d-flex icons">
-      <i class="bi bi-search"></i>
-      <i class="bi bi-cart"></i>
-      <i class="bi bi-lightning"></i>
-    </div>
+    <form class="account-modal-right" (ngSubmit)="submitAccountForm()">
+      <h3>Unlock Maximum Savings</h3>
+      <p class="account-subtitle">Enter Mobile Number</p>
 
+      <label class="phone-field">
+        <span class="country-code">IN +91</span>
+        <input
+          type="tel"
+          name="mobileNumber"
+          placeholder="Enter Mobile Number"
+          aria-label="Enter Mobile Number"
+          inputmode="numeric"
+          maxlength="10"
+          [(ngModel)]="mobileNumber"
+        />
+      </label>
+
+      <label class="offers-check">
+        <input type="checkbox" name="notifyOffers" [(ngModel)]="notifyOffers" />
+        <span>Notify me for any updates & offers</span>
+      </label>
+
+      <button class="continue-button" type="submit">Continue</button>
+
+      <p
+        class="account-message"
+        *ngIf="accountMessage"
+        [class.is-error]="accountMessageType === 'error'"
+        [class.is-success]="accountMessageType === 'success'"
+      >
+        {{ accountMessage }}
+      </p>
+
+      <p class="account-terms">
+        I accept that I have read & understood Kwikpass's Privacy Policy and T&amp;Cs.
+      </p>
+
+      <a class="account-help" href="#">Trouble logging in?</a>
+    </form>
   </div>
-</nav>
+</div>
+
+<div
+  class="drawer-overlay"
+  [class.open]="isCartOpen"
+  (click)="closeCart()"
+  [attr.aria-hidden]="!isCartOpen"
+></div>
+
+<aside class="cart-drawer" [class.open]="isCartOpen" aria-label="Shopping cart" (click)="$event.stopPropagation()">
+  <div class="cart-header">
+    <div>
+      <h3>Your Cart ({{ cartCount }} items)</h3>
+      <p>Ready to checkout your Portronics picks.</p>
+    </div>
+    <button class="drawer-close" type="button" aria-label="Close cart" (click)="closeCart()">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <div class="cart-offer">
+    Add product worth Rs. 1999 and Get Flat 250 Off.
+    <span>Use Code - SAVE250, Hurry!</span>
+  </div>
+
+  <div class="cart-body">
+    <article class="cart-item" *ngFor="let item of cartItems; let i = index">
+      <img class="cart-item-image" [src]="item.image" [alt]="item.name" />
+
+      <div class="cart-item-details">
+        <h4>{{ item.name }}</h4>
+        <p>Rs. {{ item.price }}</p>
+
+        <div class="quantity-controls">
+          <button type="button" aria-label="Decrease quantity" (click)="decreaseQuantity(i)">
+            <i class="bi bi-dash"></i>
+          </button>
+          <span>{{ item.quantity }}</span>
+          <button type="button" aria-label="Increase quantity" (click)="increaseQuantity(i)">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-item-side">
+        <div class="cart-item-price">Rs. {{ item.price * item.quantity }}</div>
+        <button class="remove-item" type="button" aria-label="Remove item" (click)="removeCartItem(i)">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </div>
+    </article>
+
+    <div class="cart-empty" *ngIf="cartItems.length === 0">
+      <i class="bi bi-cart-x"></i>
+      <p>Your cart is empty.</p>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <div class="subtotal-row">
+      <span>Subtotal</span>
+      <strong>Rs. {{ subtotal }}</strong>
+    </div>
+
+    <div class="cart-footer-actions">
+      <button class="secondary-action" type="button" (click)="viewCart()">View Cart</button>
+      <button class="primary-action" type="button" (click)="checkout()">Checkout</button>
+    </div>
+  </div>
+</aside>
+
+<a
+  class="whatsapp-float"
+  [href]="whatsappLink"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="bi bi-whatsapp"></i>
+</a>
