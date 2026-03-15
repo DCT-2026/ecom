@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { Header } from "../header/header";
-import { Footer } from "../footer/footer";
-import { HeroCarousel } from "../hero-carousel/hero-carousel";
+import { Product } from "../product/product";
+
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, HeroCarousel],
+  imports: [ Product],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
