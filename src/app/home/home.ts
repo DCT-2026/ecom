@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Categories } from '../categories/categories';
 import { CommonModule } from '@angular/common';
-
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { HeroCarousel } from '../hero-carousel/hero-carousel';
@@ -12,9 +11,9 @@ import {MobileAccessories} from '../mobile-accessories/mobile-accessories'
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Categories],
   imports: [
     CommonModule,
+    Categories,
     Header,
     Footer,
     HeroCarousel,CarAccessoriesComponent,MobileAccessories

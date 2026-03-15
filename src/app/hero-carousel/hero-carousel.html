@@ -1,41 +1,42 @@
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
 
-    <div class="carousel-inner">
+  <div class="carousel-inner">
 
-        <div class="carousel-item" *ngFor="let slide of slides; let i = index" [class.active]="i === 0">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">  <div class="carousel-inner"><div
+  class="carousel-item"
+  *ngFor="let slide of slides; let i = index"
+  [class.active]="i === 0">
 
-            <div class="hero-banner" [style.background-image]="'url(' + slide.image + ')'">
+  <div class="hero-banner">
 
-                <div class="container banner-content">
+    <img
+      class="hero-banner-image"
+      [src]="slide.image"
+      [alt]="slide.title"
+    />
 
-                    <h1>{{slide.title}}</h1>
+    <div class="container banner-content">
 
-                    <p class="subtitle">{{slide.subtitle}}</p>
+      <h1>{{ slide.title }}</h1>
 
-                    <div class="price-box">
+      <p class="subtitle">{{ slide.subtitle }}</p>
 
-                        <span class="price">{{slide.price}}</span>
+      <div class="price-box">
 
-                        <span class="old-price">{{slide.oldPrice}}</span>
+        <span class="price">{{ slide.price }}</span>
 
-                        <button class="shop-btn">Shop Now</button>
+        <span class="old-price">{{ slide.oldPrice }}</span>
 
-                    </div>
+        <button class="shop-btn">
+          Shop Now
+        </button>
 
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
+  </div>
 
 </div>
+
+  </div></div>
