@@ -1,0 +1,69 @@
+<div class="container product-container">
+
+  <div class="row">
+
+    <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4"
+         *ngFor="let product of filteredProducts">
+
+      <div class="product-card">
+
+        <!-- Discount badge -->
+        <div class="top-discount">
+          {{product.discount}} OFF
+        </div>
+
+        <!-- Product Image -->
+        <div class="image-box">
+          <img [src]="product.image" class="img-fluid">
+        </div>
+
+        <!-- Category Ribbon -->
+        <div class="category-ribbon">
+          {{product.category}}
+        </div>
+
+        <!-- Product Content -->
+        <div class="product-content">
+
+          <h5 class="product-title">
+            {{product.name}}
+          </h5>
+
+          <p class="product-desc">
+            {{product.desc}}
+          </p>
+
+          <!-- Price -->
+          <div class="price-row">
+
+            <div>
+              <span class="new-price">₹{{product.price}}</span>
+              <span class="old-price">₹{{product.oldPrice}}</span>
+            </div>
+
+            <div class="discount-circle">
+              {{product.discount}} OFF
+            </div>
+
+          </div>
+
+          <!-- EMI -->
+          <p class="emi-text">
+            or Rs. {{product.emi}} /Month 🌍
+            <span class="emi-link">Buy on EMI ></span>
+          </p>
+
+          <!-- Button -->
+          <button class="btn cart-btn w-100">
+            ADD TO CART
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

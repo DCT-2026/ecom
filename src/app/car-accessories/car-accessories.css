@@ -1,0 +1,185 @@
+/* Section */
+.car-accessories{
+ 
+  padding:20px 0;
+}
+
+/* Header layout */
+.car-accessories .header{
+  display:flex;
+  flex-direction:column;
+}
+
+/* Title + view all row */
+.car-accessories .header h2{
+  font-size:28px;
+  letter-spacing:4px;
+  font-weight:700;
+  text-transform:uppercase;
+  text-align:left;
+}
+
+/* Categories row */
+.categories{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  overflow-x:auto;
+  white-space:nowrap;
+  padding-top:10px;
+}
+
+/* Category buttons */
+.categories button{
+  border-radius:30px;
+  padding:6px 18px;
+  font-size:14px;
+  background:#fff;
+  border:1px solid #dcdcdc;
+  transition:0.3s;
+}
+
+/* Active category */
+.categories button.active{
+  background:#000;
+  color:#fff;
+  border-color:#000;
+}
+
+/* View all button */
+.categories .btn-dark{
+  margin-left:auto;
+  border-radius:30px;
+  padding:8px 20px;
+  font-size:14px;
+  color: black;
+}
+
+/* Scrollbar hide */
+.categories::-webkit-scrollbar{
+  display:none;
+}
+
+/* Product Card */
+.product-card{
+  background:#fff;
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid #e8e8e8;
+  transition:0.3s;
+  height:100%;
+}
+
+.product-card:hover{
+  box-shadow:0 8px 18px rgba(0,0,0,0.12);
+}
+
+/* Image */
+.image-box{
+  text-align:center;
+  padding:25px;
+}
+
+.image-box img{
+  max-height:180px;
+  object-fit:contain;
+}
+
+/* Ribbon */
+.category-ribbon{
+  background:#e60023;
+  color:#fff;
+  text-align:center;
+  font-size:12px;
+  font-weight:600;
+  padding:6px;
+  margin:0 20px;
+  border-radius:6px;
+}
+
+/* Content */
+.product-content{
+  padding:18px;
+}
+
+.product-title{
+  font-size:16px;
+  font-weight:700;
+}
+
+.product-desc{
+  font-size:13px;
+  color:#777;
+}
+
+/* Price */
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:10px 0;
+}
+
+.new-price{
+  font-size:22px;
+  font-weight:700;
+}
+
+.old-price{
+  font-size:14px;
+  text-decoration:line-through;
+  color:#999;
+  margin-left:6px;
+}
+
+.discount-circle{
+  background:#ff2b2b;
+  color:#fff;
+  font-size:12px;
+  padding:5px 10px;
+  border-radius:20px;
+  font-weight:600;
+}
+
+/* Cart button */
+.cart-btn{
+  background:#111;
+  color:#fff;
+  font-weight:600;
+  border-radius:6px;
+  padding:10px;
+}
+
+.cart-btn:hover{
+  background:#000;
+}
+
+/* Top discount label */
+.top-discount{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#ff2b2b;
+  color:#fff;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:20px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+  .car-accessories .header h2{
+    text-align:center;
+  }
+
+  .categories{
+    justify-content:flex-start;
+    padding-bottom:10px;
+  }
+
+  .categories .btn-dark{
+    margin-left:10px;
+  }
+
+}

@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
-import { Header } from "../header/header";
-import { Footer } from "../footer/footer";
-import { HeroCarousel } from "../hero-carousel/hero-carousel";
+import { CommonModule } from '@angular/common';
+
+import { Header } from '../header/header';
+import { Footer } from '../footer/footer';
+import { HeroCarousel } from '../hero-carousel/hero-carousel';
+import {CarAccessoriesComponent} from '../car-accessories/car-accessories'
+import {MobileAccessories} from '../mobile-accessories/mobile-accessories'
+
 
 @Component({
   selector: 'app-home',
-  imports: [Header, Footer, HeroCarousel],
+  standalone: true,
+  imports: [
+    CommonModule,
+    Header,
+    Footer,
+    HeroCarousel,CarAccessoriesComponent,MobileAccessories
+  ],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrls: ['./home.css']
 })
-export class Home {
-
-}
+export class Home {}
