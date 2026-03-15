@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Product } from "../product/product";
 import { Categories } from '../categories/categories';
 import { CommonModule } from '@angular/common';
-import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { HeroCarousel } from '../hero-carousel/hero-carousel';
 import {CarAccessoriesComponent} from '../car-accessories/car-accessories'
@@ -15,7 +14,6 @@ import {MobileAccessories} from '../mobile-accessories/mobile-accessories'
   imports: [
     CommonModule,
     Categories,
-    Header,
     Footer,
     Product,
     HeroCarousel,CarAccessoriesComponent,MobileAccessories
