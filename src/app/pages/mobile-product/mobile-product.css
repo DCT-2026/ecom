@@ -1,0 +1,132 @@
+.product-container{
+    padding:40px;
+}
+
+/* Card */
+
+.product-card{
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+}
+
+/* Top Discount */
+
+.top-discount{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#ff3b3b;
+    color:white;
+    padding:6px 10px;
+    font-size:12px;
+    border-radius:6px;
+    font-weight:600;
+}
+
+/* Image */
+
+.image-box{
+    padding:30px;
+    text-align:center;
+}
+
+.image-box img{
+    height:220px;
+    object-fit:contain;
+}
+
+/* Category Ribbon */
+
+.category-ribbon{
+    background:#e60023;
+    color:white;
+    text-align:center;
+    padding:6px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* Content */
+
+.product-content{
+    padding:18px;
+}
+
+/* Title */
+
+.product-title{
+    font-weight:700;
+}
+
+/* Description */
+
+.product-desc{
+    color:#777;
+    font-size:14px;
+}
+
+/* Price Row */
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
+}
+
+.new-price{
+    font-size:24px;
+    font-weight:700;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:#999;
+    margin-left:10px;
+}
+
+/* Discount circle */
+
+.discount-circle{
+    border:2px solid #ff3b3b;
+    color:#ff3b3b;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+}
+
+/* EMI */
+
+.emi-text{
+    margin-top:5px;
+    font-size:14px;
+}
+
+.emi-link{
+    color:#007bff;
+    font-weight:600;
+}
+
+/* Button */
+
+.cart-btn{
+    background:#1c1c1c;
+    color:white;
+    padding:12px;
+    font-weight:600;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+.cart-btn:hover{
+    background:black;
+}
